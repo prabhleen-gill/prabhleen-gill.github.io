@@ -358,8 +358,14 @@ a:hover {
     border-radius: 0;
 
     padding: 12px;
+    padding-top: 80px;
 
     overflow-y: auto;
+  }
+
+  .modal-content h2 {
+    position: relative;
+    z-index: 1;
   }
 
   .graph-row {
