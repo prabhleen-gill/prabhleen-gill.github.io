@@ -234,6 +234,11 @@ a:hover {
   margin: 20px 0;
 }
 
+.modal-content h2 {
+  position: relative;
+  z-index: 1;
+}
+
 .close-button {
   position: absolute;
 
@@ -361,11 +366,6 @@ a:hover {
     padding-top: 80px;
 
     overflow-y: auto;
-  }
-
-  .modal-content h2 {
-    position: relative;
-    z-index: 1;
   }
 
   .graph-row {
