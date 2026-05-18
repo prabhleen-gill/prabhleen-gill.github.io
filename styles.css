@@ -235,6 +235,7 @@ a:hover {
 }
 
 .close-button {
+  z-index: 3000;
   position: absolute;
   top: 16px;
   right: 20px;
@@ -504,6 +505,14 @@ a:hover {
   .rl_fig2 figcaption {
     font-size: 0.9rem;
     line-height: 1.4;
+  }
+
+  .close-button {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    font-size: 2.2rem;
+    z-index: 3000;
   }
 }
 
