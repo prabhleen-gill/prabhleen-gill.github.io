@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prabhleen Gill</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<body>
+    <nav>
+        <div class="logo">Prabhleen Gill</div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#platforms">Platforms</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="hero">
+        <img src="assets/images/personalimage2.png" alt="Profile Picture" draggable="false" oncontextmenu="return false;">
+
+        <h1>Prabhleen Gill</h1>
+
+        <p>Data Scientist</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p>
+            I am a recent graduate with interests in data science and machine learning. 
+            I enjoy working with data not only to solve problems, but also to better understand the patterns and systems behind 
+            real-world behavior. What interests me most about data science is the ability to take large amounts of 
+            information and turn them into meaningful insights that can be explored, communicated, and understood visually.
+        </p>
+        <p>
+            I value curiosity, continuous learning, and the process of improving through experimentation and exploration. 
+            I enjoy approaching problems analytically, learning new technologies, and challenging myself with projects
+             that push my technical and creative abilities. I am especially interested in work that combines analysis,
+              visualization, and storytelling to make complex information more accessible and impactful.
+        </p>
+        <p>
+            I am continually looking for opportunities to expand my technical skills and apply them to challenging 
+            real-world problems.
+        </p>
+    </section>
+
+    <section id="projects">
+        <div class="section-content">
+            <h2>Projects</h2>
+
+            <h3 class="project-category">Featured Data Science Projects</h3>
+            <div class="project-grid featured-grid">
+            <!-- 3 biggest data science projects -->
+                <div class="project-card" onclick="openModal('project1')">
+                    <img src="assets/project_covers/nycsubway_2.jpg" alt="Project 1 cover">
+                    <div class="project-card-content">
+                        <h3>NYC Subway Crowding & Delay Analysis</h3>
+                        <p>Conducted a large-scale analysis of NYC subway ridership and real-time transit data to 
+                            investigate crowding and service reliability across the subway system. Using MTA ridership, 
+                            GTFS schedule data, and real-time trip feeds, I developed a crowding index and delay 
+                            estimation pipeline to identify congestion patterns, recurring bottlenecks, and 
+                            relationships between demand and delays.</p>
+                    </div>
+                </div>
+                <div id="project1" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button" onclick="closeModal('project1')">&times;</button>
+
+                        <h2>NYC Subway Crowding & Delay Analysis</h2>
+
+                        <h3>Goal</h3>
+                        <ul>
+                            <li>Understand subway crowding and operational reliability</li>
+                            <li>Compare demand patterns with delays</li>
+                        </ul>
+
+                        <h3>Dataset</h3>
+                        <ul>
+                            <li><a href="https://data.ny.gov/Transportation/MTA-Subway-Hourly-Ridership-Beginning-2025/5wq4-mkjj/data_preview" target="_blank">MTA Subway Hourly Ridership</a></li>
+                            <li><a href="https://www.mta.info/developers" target="_blank">Static GTFS Data</a></li>
+                        </ul>
+
+                        <h3>Tools Used</h3>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>SQL</span>
+                            <span>Matplotlib</span>
+                            <span>Seaborn</span>
+                            <span>Tableau</span>
+                        </div>
+
+                        <h3>Process</h3>
+                        <ul>
+                            <li>Performed preliminary exploratory analysis on the ridership dataset, 
+                                and represented on a <a href="https://public.tableau.com/app/profile/prabhleen.gill/viz/comp264_subway_dashboard/Dashboard1" target="_blank">dashboard</a> 
+                                created using Tableau</li>
+                        </ul>
+                        <h4>Crowding Measurement</h4>
+                        <ul>
+                            <li>Created a crowding index to measure station crowding:</li>
+                            \[
+                            \text{Crowding Index} =
+                            \frac{\text{Ridership}}
+                            {\text{Scheduled Trips}}
+                            \]
+                        </ul>
+                        <figure class="nyc_fig">
+                            <img src="assets/NYC_Research_Figures/fig6.png" alt="Top 20 stations by crowding index" class="zoomable">
+                            <figcaption>
+                                Top 20 stations by crowding index
+                            </figcaption>
+                        </figure>
+
+                        <h4>Delay Estimation</h4>
+                        <ul>
+                            <li>Matched GTFS stop times with real-time subway feeds</li>
+                            <li>Calculated arrival/departure delays</li>
+                            <li>Filtered weekday trips from 6 AM-12 AM</li>
+                        </ul>
+                        <figure class="nyc_fig">
+                            <img src="assets/NYC_Research_Figures/fig8a.png" alt="Average arrival delays by line" class="zoomable">
+                            <figcaption>
+                                Average arrival delays by line color
+                            </figcaption>
+                        </figure>
+                        <figure class="nyc_fig">
+                            <img src="assets/NYC_Research_Figures/fig8b.png" alt="Average departure delays by line" class="zoomable">
+                            <figcaption>
+                                Average departure delays by line color
+                            </figcaption>
+                        </figure>
+                        <figure class="nyc_fig">
+                            <img src="assets/NYC_Research_Figures/fig9.png" alt="Worst stations by average delays" class="zoomable">
+                            <figcaption>
+                                Worst stations by average arrival & departure delays
+                            </figcaption>
+                        </figure>
+
+                        <h4>Connecting Crowding & Delay</h4>
+                        <div class="nyc_fig11">
+                            <figure>
+                                <img src="assets/NYC_Research_Figures/fig11a.png" alt="" class="zoomable">
+                                <figcaption>Ridership vs Arrival Delay</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="assets/NYC_Research_Figures/fig11b.png" alt="" class="zoomable">
+                                <figcaption>Ridership vs Departure Delay</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="assets/NYC_Research_Figures/fig11c.png" alt="" class="zoomable">
+                                <figcaption>Crowding vs Arrival Delay</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img src="assets/NYC_Research_Figures/fig11d.png" alt="" class="zoomable">
+                                <figcaption>Crowding vs Departure Delay</figcaption>
+                            </figure>
+                        </div>
+
+                        <h3>Key Findings</h3>
+                        <ol>
+                            <li>High ridership does not necessarily imply the greatest crowding</li>
+                            <p>The crowding index revealed that some stations with lower ridership experienced 
+                                greater congestion pressure due to lower service frequency.</p>
+                            <li>Delay severity varies significantly across subway lines</li>
+                            <p>Brown (J/Z) lines consistently experienced the highest delays, 
+                                while several higher-ridership lines showed comparatively lower delays.</p>
+                            <li>Crowding and delays are not strongly linked systemwide</li>
+                            <p>Scatterplot analysis showed weak relationships between crowding and delays overall,
+                                though patterns varied by line group.</p>
+                        </ol>
+
+                        <a href="https://public.tableau.com/app/profile/prabhleen.gill/viz/comp264_subway_dashboard/Dashboard1" class="button">View dashboard on Tableau</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('project2')">
+                    <img src="assets/project_covers/sandiego_1.jpg" alt="Project 2 cover">
+                    <div class="project-card-content">
+                        <h3>San Diego Airbnb Price Analysis</h3>
+                        <p>Analyzed Airbnb listings in San Diego to identify the factors that most strongly influence 
+                            pricing. Using Python for preprocessing and exploratory analysis and Tableau for 
+                            visualization, I examined how variables such as room type, property type, location, and 
+                            listing size affect listing prices.</p>
+                    </div>
+                </div>
+                <div id="project2" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button" onclick="closeModal('project2')">&times;</button>
+
+                        <h2>San Diego Airbnb Price Analysis</h2>
+
+                        <h3>Goal</h3>
+                        <ul>
+                            <li>Identify factors that influence Airbnb rental prices</li>
+                        </ul>
+
+                        <h3>Dataset</h3>
+                        <ul>
+                            <li><a href="https://insideairbnb.com/get-the-data/" target="_blank">San Diego Airbnb Listings</a></li>
+                        </ul>
+
+                        <h3>Tools Used</h3>
+                            <div class="project-tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Numpy</span>
+                            <span>Matplotlib</span>
+                            <span>Seaborn</span>
+                            <span>Tableau</span>
+                        </div>
+
+                        <h3>Process</h3>
+                        <ul>
+                            <li>Cleaned and transformed Airbnb listing data using Python and Pandas</li>
+                            <li>Engineered features including amenities count and grouped accommodation categories</li>
+                            <li>Applied K-means clustering to categorize listings into price tiers</li>
+                            <li>Built an interactive <a href="https://public.tableau.com/app/profile/prabhleen.gill/viz/SanDiegoAirbnbPrices/Dashboard1" target="_blank">dashboard</a> in Tableau with geographic filtering and dynamic visualizations</li>
+                        </ul>
+                        <figure class="airbnb_fig">
+                            <img src="assets/airbnb_figures/airbnb_dashboard_ss.png" alt="Airbnb Dashboard" class="zoomable">
+                        </figure>
+                        
+                        <h3>Key Findings</h3>
+                        <ol>
+                            <li>Entire homes had significantly higher average prices than private or shared rooms.</li>
+                            <li>Listings with more bedrooms and bathrooms consistently showed higher prices.</li>
+                            <li>Neighborhoods exhibited large differences in both average price and price range.</li>
+                        </ol>
+
+                        <a href="https://public.tableau.com/app/profile/prabhleen.gill/viz/SanDiegoAirbnbPrices/Dashboard1" class="button">View dashboard on Tableau</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('project3')">
+                    <img src="assets/project_covers/steamdeck.jpg" alt="Project 3 cover">
+                    <div class="project-card-content">
+                        <h3>Steam Game Review Sentiment Analysis</h3>
+                        <p>Investigated linguistic characteristics of Steam game reviews through sentiment analysis, 
+                            readability analysis, and machine learning classification to 
+                            identify patterns in review structure, vocabulary complexity, and sentiment expression.</p>
+                    </div>
+                </div>
+                <div id="project3" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button" onclick="closeModal('project3')">&times;</button>
+
+                        <h2>Steam Game Review Sentiment Analysis</h2>
+
+                        <h3>Goals</h3>
+                        <ul>
+                            <li>Explore the relationships between different word characteristics and writing patterns to better understand sentiment.</li>
+                            <li>Identify which machine learning model is best at classifying sentiment.</li>
+                        </ul>
+
+                        <h3>Dataset</h3>
+                        <ul>
+                            <li><a href="https://www.kaggle.com/datasets/filipkin/steam-reviews?select=output.csv" target="_blank">Steam Reviews&Games Dataset</a></li>
+                        </ul>
+
+                        <h3>Tools Used</h3>
+                        <div class="project-tags">
+                        <span>Python</span>
+                        <span>Numpy</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                        <span>Tensorflow</span>
+                        <span>Scikit-learn</span>
+                        <span>Keras</span>
+                        <span>NLTK</span>
+                        </div>
+
+                        <h3>Process</h3>
+                        <h4>Exploratory Data Analysis</h4>
+                        <ul>
+                            <li>Cleaned dataset by performing dimension reduction, removing empty values, removing miscellaneous URLs and symbols,
+                                and normalizing and tokenizing reviews.
+                            </li>
+                            <li>Performed feature engineering to create features such as character count, word count, average word length,
+                                stopwords count, and stopwords ratio.</li>
+                            <li>Performed sentiment analysis on dataset by counting stopwords (using Collections library), 
+                                generating sentiment scores of reviews (using VADER), and generating readability indices of reviews (using TextStat).
+                            </li>
+                            <li>Conducted exploratory data analysis on dataset, and used Matplotlib to generate visualizations.</li>
+                        </ul>
+                        <h5>Questions asked:</h5>
+                        <ol>
+                            <li>Do positive and negative reviews differ in textual length and verbosity?</li>
+                            <figure class="steam_fig">
+                                <img src="assets/steam_figures/wordcount_hist.png" alt="Distribution of Word Count across Sentiment" class="zoomable">
+                                <img src="assets/steam_figures/charcount_hist.png" alt="Distribution of Char Count across Sentiment" class="zoomable">
+                            </figure>
+                            <p>Positive reviews tend to have lower word and character counts while negative reviews have higher counts.</p>
+
+                            <li>Do positive and negative reviews exhibit distinguishable linguistic characteristics?</li>
+                            <figure class="steam_fig2">
+                                <img src="assets/steam_figures/steam_radarchart.png" alt="Linguistic Characteristics of Sentiment" class="zoomable">
+                            </figure>
+                            <p>Readability is a stronger factor for positive sentiment, while word count and non-stopword count
+                                are stronger factors for negative sentiment.
+                            </p>
+
+                            <li>Do longer reviews exhibit greater linguistic complexity?</li>
+                            <figure class="steam_fig">
+                                <img src="assets/steam_figures/word_read_line.png" alt="Line graph comparing word count with readability index" class="zoomable">
+                                <img src="assets/steam_figures/word_read_box.png" alt="Boxplots comparing word count with readability index" class="zoomable">
+                            </figure>
+                            <p>There is a negative relationship between word count and readability index. Shorter reviews tend to be more readable.</p>
+
+                            <li>Do more readable reviews tend to express more positive sentiment?</li>
+                            <figure class="steam_fig">
+                                <img src="assets/steam_figures/senti_read_line.png" alt="Line graph comparing sentiment score with readability index" class="zoomable">
+                                <img src="assets/steam_figures/senti_read_box.png" alt="Boxplots comparing sentiment score with readability index" class="zoomable">
+                            </figure>
+                            <p>There is no distinct relationship between readability and sentiment scores.</p>
+
+                            <li>What role do stopword and non-stopword distributions play in sentiment expression?</li>
+                            <figure class="steam_fig3">
+                                <img src="assets/steam_figures/senti_stopwords_hist.png" alt="Linguistic Characteristics of Sentiment" class="zoomable">
+                            </figure>
+                            <p>Non-stopwords tend to have neutral or positive sentiment scores. There is no distinct pattern for stopwords.</p>
+                        </ol>
+
+                        <h4>Classification Using Machine Learning</h4>
+                        <ul>
+                            <li>Implemented three classical machine learning models (Logistic Regression, Support Vector Machine,
+                                Naive Bayes) and one deep learning model (LSTM) to compare performance.
+                            </li>
+                            <li>Developed machine learning pipeline that applied TD-IDF to vectorize data, then feed it into the classification models.</li>
+                            <li>Developed LSTM model with ReLU and sigmoid activation functions and binary cross-entropy loss function.</li>
+                            <li>Visualized results through confusion matrices.</li>
+                        </ul>
+                        <figure class="steam_fig4">
+                            <div class="model_matrix">
+                                <img src="assets/steam_figures/svc_confusion.png" alt="Confusion Matrix displaying results from Linear SVM Model" class="zoomable">
+                                <figcaption>Confusion matrix for LinearSVC.</figcaption>
+                            </div>
+                            <div class="model_bar">
+                                <img src="assets/steam_figures/gamereview_model_comparison.png" alt="Bar chart of accuracies for each machine learning model" class="zoomable">
+                                <figcaption>Comparison of all models tested.</figcaption>
+                            </div>
+                        </figure>
+
+                        <h3>Key Findings</h3>
+                        <ul>
+                            <li>Negative reviews tend to be longer than positive reviews (higher word and character counts), 
+                                and have slightly higher complexity than positive reviews.
+                            </li>
+                            <li>Longer, detailed reviews tend to have lower readability</li>
+                            <li>Classical machine learning models Logistic Regression and Linear SVM had the highest accuracies at 87%
+                                when classifying reviews by sentiment.
+                            </li>
+                        </ul>
+
+                        <a href="https://github.com/pgilll/Steam-Game-Review-Sentiment-Analysis" class="button">View project on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="project-category">Machine Learning Projects</h3>
+            <div class="project-grid featured-grid">
+            <!-- 2 ML projects -->
+                <div class="project-card" onclick="openModal('project4')">
+                    <img src="assets/project_covers/stocks.jpg" alt="Project 4 cover">
+                    <div class="project-card-content">
+                        <h3>Stock Price Prediction Model</h3>
+                        <p>Implemented a machine learning pipeline to forecast stock closing prices using historical market data.</p>
+                    </div>
+                </div>
+                <div id="project4" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button" onclick="closeModal('project4')">&times;</button>
+
+                        <h2>Stock Price Prediction Model</h2>
+
+                        <h3>Goal</h3>
+                        <ul>
+                            <li>Apply machine learning and time-series analysis techniques to financial data 
+                                to identify patterns in historical stock prices and generate future price predictions.</li>
+                        </ul>
+
+                        <h3>Dataset</h3>
+                        <ul>
+                            <li><a href="https://www.kaggle.com/datasets/dgawlik/nyse/data" target="_blank">New York Stock Exchange</a></li>
+                        </ul>
+
+                        <h3>Tools Used</h3>
+                        <div class="project-tags">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Numpy</span>
+                        <span>Scikit-learn</span>
+                        <span>Matplotlib</span>
+                        </div>
+
+                        <h3>Process</h3>
+                        <ul>
+                            <li>Preprocessed and cleaned dataset using built-in Scikit-learn package, 
+                                as well as removing null values.</li>
+                            <li>Performed feature engineering to create columns for 5 and 10 day rolling average means, 
+                                5 day rolling average standard deviation, and percent change.
+                            </li>
+                            <li>Developed a Linear Regression model to forecast stock prices for the next 5 days.</li>
+                        </ul>
+
+                        <h3>Results</h3>
+                        <figure class="nyc_fig">
+                            <img src="assets/stock_figures/stock_output.png" alt="" class="zoomable">
+                            <figcaption>
+                                5-day forecast of stock prices generated by the linear regression model.
+                            </figcaption>
+                        </figure>
+                        <figure class="nyc_fig">
+                            <img src="assets/stock_figures/stock_chart.png" alt="" class="zoomable">
+                            <figcaption>
+                                30-day forecast for GOOG stock prices.
+                            </figcaption>
+                        </figure>
+
+                        <a href="https://github.com/pgilll/Stock-Price-Prediction-Model" class="button">View project on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('project5')">
+                    <img src="assets/project_covers/phishing_1.jpg" alt="Project 5 cover">
+                    <div class="project-card-content">
+                        <h3>Phishing Email Detection</h3>
+                        <p>Built a phishing email classifier using machine learning and NLP techniques to detect malicious emails.</p>
+                    </div>
+                </div>
+                <div id="project5" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button" onclick="closeModal('project5')">&times;</button>
+
+                        <h2>Phishing Email Detection</h2>
+
+                        <h3>Goal</h3>
+                        <ul>
+                            <li>Compare the effectiveness of traditional machine learning algorithms and 
+                                deep learning models in identifying phishing emails from 
+                                textual patterns and language features.</li>
+                        </ul>
+
+                        <h3>Dataset</h3>
+                        <ul>
+                            <li><a href="https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset" target="_blank">Phishing Email Dataset</a></li>
+                        </ul>
+
+                        <h3>Tools Used</h3>
+                        <div class="project-tags">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Tensorflow</span>
+                        <span>Scikit-learn</span>
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+                        <span>NLTK</span>
+                        <span>Keras</span>
+                        </div>
+
+                        <h3>Process</h3>
+                        <ul>
+                            <li>Preprocessed the dataset by cleaning (removing punctuation, extra symbols, stopwords), 
+                                tokenizing, stemming, and lemmatizing the text. </li>
+                            <li>Trained and tested five classical machine learning models (Logistic Regression, LinearSVC, Naive Bayes, Random Forest, KNN)
+                                and two deep learning models (LSTM and GRU) using preprocessed data.
+                            </li>
+                            <li>Evaluated models using accuracy, precision, recall, and F1 score.</li>
+                            <li>Visualized results on confusion matrices.</li>
+                        </ul>
+
+                        <h3>Results</h3>
+                        <figure class="phishing_fig1">
+                            <img src="assets/phishing_detection_figs/phishing_confusion_svm.png" alt="Confusion Matrix displaying results from LinearSVC model" class="zoomable">
+                            <img src="assets/phishing_detection_figs/phishing_confusion_knn.png" alt="Confusion Matrix displaying results from KNN model" class="zoomable">
+                            <figcaption>
+                                Confusion matrix displaying results from the LinearSVC model.
+                            </figcaption>
+                            <figcaption>
+                                Confusion matrix displaying results from the KNN model.
+                            </figcaption>
+                        </figure>
+                        <figure class="phishing_fig2">
+                            <div class="phishing_results">
+                                <img src="assets/phishing_detection_figs/phishing_model_results.png" alt="Evaluation metrics for machine learning and deep learning models" class="zoomable">
+                            </div>
+                            <figcaption>
+                                Evaluation metrics for the machine learning and deep learning models. 
+                            </figcaption>
+                        </figure>
+                        
+
+                        <a href="https://github.com/pgilll/Phishing-Email-Detection/tree/main" class="button">View project on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="project-category">Other Projects</h3>
+            <div class="project-grid featured-grid">
+            <!-- 3 non-data-science projects -->
+               <div class="project-card" onclick="openModal('project6')">
+                    <img src="assets/project_covers/nycsubway_1.jpg" alt="Project 6 cover">
+                    <div class="project-card-content">
+                        <h3>NYC Subway Route Optimization Using Dijkstra's Algorithm</h3>
+                        <p>Developed a graph-based Python application implementing Dijkstra's shortest path algorithm 
+                            on the New York City subway network.</p>
+                    </div>
+                </div>
+                <div id="project6" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button" onclick="closeModal('project6')">&times;</button>
+
+                        <h2>NYC Subway Route Optimization Using Dijkstra's Algorithm</h2>
+
+                        <h3>Goal</h3>
+                        <ul>
+                            <li>Apply Dijkstra's algorithm to the NYC subway system to generate the most optimal path
+                                between two stations.
+                            </li>
+                        </ul>
+
+                        <h3>Tools Used</h3>
+                        <div class="project-tags">
+                        <span>Python</span>
+                        <span>Plotly</span>
+                        <span>Networkx</span>
+                        </div>
+
+                        <h3>Process</h3>
+                        <ul>
+                            <li>Manually collected station names using a map of the NYC subway, and collected the distances
+                                between two stations (in miles) using Google Maps. 
+                                These were used to form the nodes and edges of the network.
+                                Distance in miles was used as the weight of each edge.
+                            </li>
+                            <li>Formed the network graph within the program using the nodes and edges.</li>
+                            <li>Applied Dijkstra's algorithm through a function that took the graph and starting node as input.</li>
+                            <li>Visualized the shortest path on an interactive network graph created using Plotly and Networkx.</li>
+                        </ul>
+
+                        <h3>Results</h3>
+                        <ul>
+                            <li>Upon running the program, the user is prompted to provide a start station and a destination station.
+                                Then the program produces the shortest route between the two stations, including other stations that are on that path,
+                                 as well as the total distance in miles. 
+                            </li>
+                        </ul>
+                        <figure class="nyc_fig">
+                            <img src="assets/images/nyc_subway_network_graph.png" alt="Network graph of the NYC subway system with the shortest path indicated in red." class="zoomable">
+                        </figure>
+
+                        <a href="https://github.com/pgilll/NY-Subway-System-Route-Finder/tree/main" class="button">View project on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('project7')">
+                    <img src="assets/cliffwalking_figures/cliffwalking_cover.png" alt="Project 7 cover">
+                    <div class="project-card-content">
+                        <h3>Reinforcement Learning Algorithms for CliffWalking Environment</h3>
+                        <p>Implemented reinforcement learning algorithms in the OpenAI Gym CliffWalking environment to compare
+                             model-free and dynamic programming approaches.</p>
+                    </div>
+                </div>
+                <div id="project7" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button" onclick="closeModal('project7')">&times;</button>
+
+                        <h2>Reinforcement Learning Algorithms for CliffWalking Environment</h2>
+
+                        <h3>Goal</h3>
+                        <ul>
+                            <li>Explore how reinforcement learning agents learn optimal decision-making strategies through 
+                                interaction with an environment and compare the behavior of different RL algorithms.</li>
+                        </ul>
+
+                        <h3>Tools Used</h3>
+                        <div class="project-tags">
+                        <span>Python</span>
+                        <span>Numpy</span>
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+                        </div>
+
+                        <h3>Process</h3>
+                        <ul>
+                            <li>Implemented model-based algorithm Value Iteration and model-free algorithms Sarsa and Q-Learning 
+                                through Python functions that returned learned values and policies.
+                            </li>
+                            <li>Visualized learned values and sums of rewards per episode for each algorithm 
+                                using Matplotlib and Seaborn.</li>
+                        </ul>
+
+                        <h3>Results</h3>
+                        <ul>
+                            <li>Sarsa produced a safer path while Q-Learning produced the optimal shortest path, 
+                                but Sarsa yielded more rewards.
+                            </li>
+                            <li>
+                                Sarsa is more suitable when learning is prioritized, 
+                                while Q-Learning is more suitable when performance is prioritized.
+                            </li>
+                            <li>Model-based algorithms are best when a planned route is needed to
+                                complete a task. Model-free algorithms are best when end rewards hold more 
+                                significance and exploration is encouraged.</li>
+                        </ul>
+                        <figure class="rl_fig">
+                            <div class="rl_fig1">
+                                <img src="assets/cliffwalking_figures/rl_vi_fig.png" alt="Learned V-values of Value Iteration" class="zoomable">
+                            </div>
+                            <figcaption>
+                                Learned V-values of Value Iteration algorithm.
+                            </figcaption>
+                        </figure>
+
+                        <figure class="rl_fig2">
+                            <img src="assets/cliffwalking_figures/rl_sarsa_fig1.png" alt="Learned Q-values of Sarsa" class="zoomable">
+                            <img src="assets/cliffwalking_figures/rl_sarsa_fig2.png" alt="Sum of rewards per episode for Sarsa" class="zoomable">
+                            <figcaption>
+                                Learned Q-Values of Sarsa algorithm.
+                            </figcaption>
+                            <figcaption>
+                                Sum of rewards per episode for Sarsa algorithm.
+                            </figcaption>
+                        </figure>
+                        <figure class="rl_fig2">
+                            <img src="assets/cliffwalking_figures/rl_ql_fig1.png" alt="Learned Q-values of Q-Learning" class="zoomable">
+                            <img src="assets/cliffwalking_figures/rl_ql_fig2.png" alt="Sum of rewards per episode for Q-Learning" class="zoomable">
+                            <figcaption>
+                                Learned Q-Values of Q-Learning algorithm.
+                            </figcaption>
+                            <figcaption>
+                                Sum of rewards per episode for Q-Learning algorithm.
+                            </figcaption>
+                        </figure>
+
+                        <a href="https://github.com/pgilll/Reinforcement-Learning-Final-Project" class="button">View project on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('project8')">
+                    <img src="assets/project_covers/phishing_2.jpg" alt="Project 8 cover">
+                    <div class="project-card-content">
+                        <h3>Game-Theoretic Phishing Attack Simulation</h3>
+                        <p>Developed a repeated-game cybersecurity simulation in Python modeling interactions between phishing attackers and defenders</p>
+                    </div>
+                </div>
+                <div id="project8" class="modal">
+                    <div class="modal-content">
+                        <button class="close-button" onclick="closeModal('project8')">&times;</button>
+
+                        <h2>Game-Theoretic Phishing Attack Simulation</h2>
+
+                        <h3>Goal</h3>
+                        <ul>
+                            <li>Explore how game theory can model the strategic interactions between phishing attackers 
+                                and defenders in cybersecurity environments.</li>
+                        </ul>
+
+                        <h3>Tools Used</h3>
+                        <div class="project-tags">
+                        <span>Python</span>
+                        </div>
+
+                        <h3>Process</h3>
+                        <ul>
+                            <li>Designed utility functions using probabilistic attack success, security costs, attacker gains, and detection penalties</li>
+                            <li>Implemented dynamic awareness modeling that adapted phishing success probabilities over time</li>
+                            <li>Simulated adaptive player strategies and analyzed convergence behavior using payoff matrices and graphical visualizations</li>
+                            <li>Visualized utilities, awareness, and attack success probability using Matplotlib</li>
+                        </ul>
+
+                        <h3>Results</h3>
+                        <figure class="nyc_fig">
+                            <img src="assets/images/python_results.png" alt="" class="zoomable">
+                            <figcaption>
+                                Output of the Python simulation displaying player strategies, awareness level, success probability,
+                                 player utilities, and whether the attack succeeded.
+                            </figcaption>
+                        </figure>
+
+                        <a href="https://github.com/pgilll/Game-Theoretic-Phishing-Attack-Simulation" class="button">View project on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="platforms">
+        <div class="section-content">
+            <h2>Other Platforms</h2>
+
+            <div class="platform-grid">
+            <a
+                href="https://github.com/pgilll"
+                target="_blank"
+                class="platform-card"
+            >
+                <h3>GitHub</h3>
+
+                <p>
+                View my programming projects, repositories,
+                and source code.
+                </p>
+            </a>
+            <a
+                href="https://public.tableau.com/app/profile/prabhleen.gill/vizzes"
+                target="_blank"
+                class="platform-card"
+            >
+                <h3>Tableau</h3>
+
+                <p>
+                Explore my dashboards, visualizations,
+                and data storytelling projects.
+                </p>
+            </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-content">
+
+            <h2>Contact</h2>
+
+            <div class="contact-card">
+
+            <h3>Prabhleen Gill</h3>
+
+            <p>California, USA</p>
+
+            <p>pgill9145@gmail.com</p>
+
+            <p>
+                <a
+                href="https://www.linkedin.com/in/pgill" target="_blank">LinkedIn</a>
+            </p>
+
+            </div>
+
+        </div>
+        <div id="image-viewer" class="image-viewer">
+            <span class="close-viewer">&times;</span>
+
+            <img id="viewer-img" src="" alt="">
+        </div>
+    </section>
+
+</body>
+</html>
