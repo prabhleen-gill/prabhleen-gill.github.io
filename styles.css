@@ -542,6 +542,10 @@ a:hover {
 
     backdrop-filter: blur(8px);
   }
+
+  .button {
+    margin-bottom: 12px;
+  }
 }
 
 /* Navbar */
