@@ -56,7 +56,7 @@ a {
 
 a:hover {
   color: var(--hover);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* Hero Section */
@@ -100,8 +100,7 @@ a:hover {
 #about p {
   max-width: 900px;
   margin: 0 auto;
-  margin-bottom: 15px;
-  text-align: justify;
+  text-align: left;
   font-size: 1.05rem;
   text-indent: 30px;
 }
