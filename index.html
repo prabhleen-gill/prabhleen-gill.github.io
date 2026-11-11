@@ -25,27 +25,35 @@
 
         <h1>Prabhleen Gill</h1>
 
-        <p>Data Scientist</p>
+        <p>AI/ML & Data Science</p>
     </section>
 
     <section id="about">
         <h2>About Me</h2>
 
         <p>
-            I am a recent graduate with interests in data science and machine learning. 
-            I enjoy working with data not only to solve problems, but also to better understand the patterns and systems behind 
-            real-world behavior. What interests me most about data science is the ability to take large amounts of 
-            information and turn them into meaningful insights that can be explored, communicated, and understood visually.
+            Hi! I'm Prabhleen and I am recent graduate from the University of the Pacific, where I earned my Master's in Computer Science 
+            and my Bachelor's in Mathematics. 
+            I have a growing passion for data science and machine learning.  
+            I enjoy exploring data, uncovering patterns, and finding ways to turn complex information into something meaningful. 
+            What I find most exciting about data science is the opportunity to look beyond the numbers themselves and understand the 
+            real-world behaviors, relationships, and systems they represent.
         </p>
         <p>
-            I value curiosity, continuous learning, and the process of improving through experimentation and exploration. 
-            I enjoy approaching problems analytically, learning new technologies, and challenging myself with projects
-             that push my technical and creative abilities. I am especially interested in work that combines analysis,
-              visualization, and storytelling to make complex information more accessible and impactful.
+            I'm naturally curious and enjoy learning by experimenting, exploring new ideas, and taking on problems that challenge me to 
+            think in different ways. Whether I'm analyzing large datasets, building predictive models, or creating visualizations, 
+            I find it rewarding to work through the process of turning raw data into insights that others can easily explore and understand. 
+            I'm particularly drawn to the intersection of data analysis, machine learning, and visualization, where technical problem-solving 
+            meets creativity and storytelling.
         </p>
         <p>
-            I am continually looking for opportunities to expand my technical skills and apply them to challenging 
-            real-world problems.
+            I'm always looking for new things to learn, new technologies to explore, and interesting problems to work on. 
+            I hope to continue growing my skills while using data to better understand the world around us and contribute to solutions 
+            that have a meaningful, real-world impact.
+        </p>
+        <p>
+            I appreciate you taking the time to visit my portfolio! I hope you enjoy exploring some of the projects I've worked on. 
+            I'm always happy to answer questions, hear feedback, or connect with others, so feel free to reach out!
         </p>
     </section>
 
@@ -53,9 +61,8 @@
         <div class="section-content">
             <h2>Projects</h2>
 
-            <h3 class="project-category">Featured Data Science Projects</h3>
+            <h3 class="project-category">Data Science Projects</h3>
             <div class="project-grid featured-grid">
-            <!-- 3 biggest data science projects -->
                 <div class="project-card" onclick="openModal('project1')">
                     <img src="assets/project_covers/nycsubway_2.jpg" alt="Project 1 cover">
                     <div class="project-card-content">
@@ -97,13 +104,13 @@
 
                         <h3>Process</h3>
                         <ul>
-                            <li>Performed preliminary exploratory analysis on the ridership dataset, 
-                                and represented on a <a href="https://public.tableau.com/app/profile/prabhleen.gill/viz/comp264_subway_dashboard/Dashboard1" target="_blank">dashboard</a> 
-                                created using Tableau</li>
+                            <li>Performed preliminary exploratory data analysis (EDA) on the ridership dataset, 
+                                and visualized the results on a 
+                                <a href="https://public.tableau.com/app/profile/prabhleen.gill/viz/comp264_subway_dashboard/Dashboard1" target="_blank"> Tableau dashboard</a> </li>
                         </ul>
                         <h4>Crowding Measurement</h4>
                         <ul>
-                            <li>Created a crowding index to measure station crowding:</li>
+                            <li>Constructed a crowding index to measure station crowding:</li>
                             \[
                             \text{Crowding Index} =
                             \frac{\text{Ridership}}
@@ -120,8 +127,9 @@
                         <h4>Delay Estimation</h4>
                         <ul>
                             <li>Matched GTFS stop times with real-time subway feeds</li>
-                            <li>Calculated arrival/departure delays</li>
+                            <li>Calculated arrival and departure delays by taking the differencef between real times and scheduled times</li>
                             <li>Filtered weekday trips from 6 AM-12 AM</li>
+                            <li>Determined the "worst" performing station for each day (the station with the highest arrival and/or departure delay)</li>
                         </ul>
                         <figure class="nyc_fig">
                             <img src="assets/NYC_Research_Figures/fig8a.png" alt="Average arrival delays by line" class="zoomable">
@@ -143,6 +151,10 @@
                         </figure>
 
                         <h4>Connecting Crowding & Delay</h4>
+                        <ul>
+                            <li>Ranked stations by their total ridership, crowding index, arrival delay, and departure delay</li>
+                            <li>Visualized their correlations on scatterplots</li>
+                        </ul>
                         <div class="nyc_fig11">
                             <figure>
                                 <img src="assets/NYC_Research_Figures/fig11a.png" alt="Ridership vs Arrival Delay" class="zoomable">
@@ -201,7 +213,7 @@
 
                         <h3>Goal</h3>
                         <ul>
-                            <li>Identify factors that influence Airbnb rental prices</li>
+                            <li>Identify factors that influence Airbnb rental prices using real Airbnb data</li>
                         </ul>
 
                         <h3>Dataset</h3>
@@ -224,7 +236,7 @@
                             <li>Cleaned and transformed Airbnb listing data using Python and Pandas</li>
                             <li>Engineered features including amenities count and grouped accommodation categories</li>
                             <li>Applied K-means clustering to categorize listings into price tiers</li>
-                            <li>Built an interactive <a href="https://public.tableau.com/app/profile/prabhleen.gill/viz/SanDiegoAirbnbPrices/Dashboard1" target="_blank">dashboard</a> in Tableau with geographic filtering and dynamic visualizations</li>
+                            <li>Built an interactive <a href="https://public.tableau.com/app/profile/prabhleen.gill/viz/SanDiegoAirbnbPrices/Dashboard1" target="_blank"> Tableau dashboard</a> with geographic filtering and dynamic visualizations</li>
                         </ul>
                         <figure class="airbnb_fig">
                             <img src="assets/airbnb_figures/airbnb_dashboard_ss.png" alt="Airbnb Dashboard" class="zoomable">
@@ -293,7 +305,7 @@
                             </li>
                             <li>Conducted exploratory data analysis on dataset, and used Matplotlib to generate visualizations.</li>
                         </ul>
-                        <h5>Questions asked:</h5>
+                        <h4>Questions asked:</h4>
                         <ol>
                             <li>Do positive and negative reviews differ in textual length and verbosity?</li>
                             <figure class="steam_fig">
@@ -315,7 +327,7 @@
                                 <img src="assets/steam_figures/word_read_line.png" alt="Line graph comparing word count with readability index" class="zoomable">
                                 <img src="assets/steam_figures/word_read_box.png" alt="Boxplots comparing word count with readability index" class="zoomable">
                             </figure>
-                            <p>There is a negative relationship between word count and readability index. Shorter reviews tend to be more readable.</p>
+                            <p>A negative relationship between word count and readability index indicates that shorter reviews tend to be more readable.</p>
 
                             <li>Do more readable reviews tend to express more positive sentiment?</li>
                             <figure class="steam_fig">
@@ -336,8 +348,8 @@
                             <li>Implemented three classical machine learning models (Logistic Regression, Support Vector Machine,
                                 Naive Bayes) and one deep learning model (LSTM) to compare performance.
                             </li>
-                            <li>Developed machine learning pipeline that applied TD-IDF to vectorize data, then feed it into the classification models.</li>
-                            <li>Developed LSTM model with ReLU and sigmoid activation functions and binary cross-entropy loss function.</li>
+                            <li>Developed a machine learning pipeline that applied TD-IDF to vectorize data, then feed the data into the classification models.</li>
+                            <li>Developed LSTM model with ReLU and sigmoid activation functions, and binary cross-entropy loss function.</li>
                             <li>Visualized results through confusion matrices.</li>
                         </ul>
                         <figure class="steam_fig4">
@@ -369,7 +381,6 @@
 
             <h3 class="project-category">Machine Learning Projects</h3>
             <div class="project-grid featured-grid">
-            <!-- 2 ML projects -->
                 <div class="project-card" onclick="openModal('project4')">
                     <img src="assets/project_covers/stocks.jpg" alt="Project 4 cover">
                     <div class="project-card-content">
@@ -386,7 +397,7 @@
                         <h3>Goal</h3>
                         <ul>
                             <li>Apply machine learning and time-series analysis techniques to financial data 
-                                to identify patterns in historical stock prices and generate future price predictions.</li>
+                                in order to identify patterns in historical stock prices and generate future price predictions</li>
                         </ul>
 
                         <h3>Dataset</h3>
