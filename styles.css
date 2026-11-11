@@ -4,6 +4,7 @@
   --text: #0f172a;
   --muted: #475569;
   --accent: #5fbcef;
+  --hover: #7bc5ed;
 }
 
 * {
@@ -54,8 +55,8 @@ a {
 }
 
 a:hover {
-  color: #7bc5ed;
-  text-decoration: underline;
+  color: var(--hover);
+  text-decoration: none;
 }
 
 /* Hero Section */
@@ -99,8 +100,10 @@ a:hover {
 #about p {
   max-width: 900px;
   margin: 0 auto;
-  text-align: left;
+  margin-bottom: 15px;
+  text-align: justify;
   font-size: 1.05rem;
+  text-indent: 30px;
 }
 
 /* Projects Section */
